@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Returnare Mașină</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { margin: 10px 0; padding: 5px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+<h2>Returnare Mașină</h2>
+
+<div id="formReturnare">
+  <label>Număr contract:</label><br>
+  <input type="text" id="contract"><br>
+  <label>Data returnării:</label><br>
+  <input type="date" id="data"><br>
+  <button onclick="afiseazaCost()">Calculează cost</button>
+</div>
+
+<div id="confirmare" class="hidden">
+  <p>Cost total: 780 RON. Confirmați?</p>
+  <button onclick="finalizeaza()">Confirmă</button>
+  <button onclick="anuleaza()">Anulează</button>
+</div>
+
+<div id="final" class="hidden">
+  <p>Returnarea a fost finalizată. Mulțumim!</p>
+</div>
+
+<script>
+  function afiseazaCost() {
+    document.getElementById("formReturnare").style.display = "none";
+    document.getElementById("confirmare").style.display = "block";
+  }
+
+  function finalizeaza() {
+    document.getElementById("confirmare").style.display = "none";
+    document.getElementById("final").style.display = "block";
+  }
+
+  function anuleaza() {
+    location.reload();
+  }
+</script>
+</body>
+</html>
